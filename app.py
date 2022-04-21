@@ -161,9 +161,11 @@ def index():
         data = file.read()
     return data
 
-@app.route("/js/main.js", methods = ['GET'])
+#@app.route("/js/main.js", methods = ['GET'])
+@app.route("main.js", methods = ['GET'])
 def get_js():
-    with open('js/main.js', 'r') as file:
+#    with open('js/main.js', 'r') as file:
+    with open('main.js', 'r') as file:
         data = file.read()
     return data
 
