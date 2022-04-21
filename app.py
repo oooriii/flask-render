@@ -162,7 +162,7 @@ def index():
     return data
 
 #@app.route("/js/main.js", methods = ['GET'])
-@app.route("main.js", methods = ['GET'])
+@app.route("/main.js", methods = ['GET'])
 def get_js():
 #    with open('js/main.js', 'r') as file:
     with open('main.js', 'r') as file:
@@ -205,11 +205,13 @@ def get_odds(name, payload):
             return json.dumps(odds)
 
 
+"""
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=8080, debug=True)
     app.run()
     #from waitress import serve
     #serve(app, host="0.0.0.0", port=8080)
     #serve(app)
+"""
 
 
