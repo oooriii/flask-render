@@ -167,8 +167,8 @@ app = Flask(__name__)
 
 @app.route("/my-bets", methods = ['GET'])
 def get_my_bets():
-    
-    return mongoUri
+
+    #return mongoUri
 
 @app.route("/", methods = ['GET'])
 def index():
