@@ -167,8 +167,11 @@ app = Flask(__name__)
 
 @app.route("/my-bets", methods = ['GET'])
 def get_my_bets():
+    client = pymongo.MongoClient(mongoUri, tlsCAFile=certifi.where())
 
-    #return mongoUri
+    db = client.matched_betting
+    promos = db.promos.find({})
+    return json.dumps(promos)
 
 @app.route("/", methods = ['GET'])
 def index():
