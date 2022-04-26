@@ -22,6 +22,16 @@ from flask import Flask, request
 import requests
 import json
 
+import pymongo
+import certifi
+import datetime
+
+import pprint
+
+import os
+mongoUri = os.environ['mongoUri']
+
+
 URI_ODDS = 'https://www.ninjabet.es/get_data_sp.php'
 URI_EVENTS = ''
 
@@ -155,6 +165,11 @@ payload_data = {
 
 app = Flask(__name__)
 
+@app.route("/my-bets", methods = ['GET'])
+def get_my_bets():
+    
+    return mongoUri
+
 @app.route("/", methods = ['GET'])
 def index():
     with open('index.html', 'r') as file:
@@ -213,5 +228,3 @@ if __name__ == "__main__":
     #serve(app, host="0.0.0.0", port=8080)
     #serve(app)
 """
-
-
